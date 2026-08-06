@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpolation Search Visualizer</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 40px; }
+        input, button { padding: 10px; background: #222; border: 1px solid #444; color: #fff; margin-right: 10px; }
+        button { cursor: pointer; border-color: #ffd700; color: #ffd700; }
+        .step-card { background: #1a1a1a; border-left: 4px solid #ffd700; padding: 15px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Interpolation Search Visualizer</h1>
+    
+    <div>
+        <input type="text" id="arrayInput" value="10, 13, 15, 16, 19, 22, 24, 26, 27, 31, 35" style="width: 300px;">
+        <input type="number" id="targetInput" value="24" style="width: 80px;">
+        <button onclick="triggerSearch()">Search</button>
+    </div>
+
+    <h2 id="result"></h2>
+    <div id="stepsContainer"></div>
+
+    <script>
+        async function triggerSearch() {
+            const arrayStr = document.getElementById('arrayInput').value;
+            const target = parseInt(document.getElementById('targetInput').value);
+            
+            // Convert comma-separated string to actual array of numbers
+            const array = arrayStr.split(',').map(num => parseInt(num.trim())).sort((a,b) => a-b);
+
+            const response = await fetch('/api/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ array, target })
+            });
+
+            const data = await response.json();
+            
+            // Display Results
+            document.getElementById('result').innerText = data.found 
+                ? ` Found at Index: ${data.index}` 
+                : ` Target not found`;
+
+            // Display chronological execution history
+            const container = document.getElementById('stepsContainer');
+            container.innerHTML = '### Search Iterations:<br>';
+            data.steps.forEach((step, idx) => {
+                container.innerHTML += `
+                    <div class="step-card">
+                        <strong>Iteration ${idx + 1}:</strong><br>
+                        Active Range: Index [${step.low}] to [${step.high}]<br>
+                        Calculated Probe Position: <strong>Index ${step.pos}</strong> (Value: ${step.pos_val})
+                    </div>`;
+            });
+        }
+    </script>
+</body>
+</html>
