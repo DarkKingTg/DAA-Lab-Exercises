@@ -1,16 +1,6 @@
 from typing import List, Tuple
 
 def matrix_chain_multiplication(dimensions: List[int]) -> Tuple[int, List[List[int]], List[str]]:
-    """
-    Find optimal cost for matrix chain multiplication using dynamic programming.
-    
-    Args:
-        dimensions: List of matrix dimensions where matrix i has dimensions 
-                   dimensions[i-1] x dimensions[i]
-    
-    Returns:
-        Tuple of (minimum_cost, dp_table, execution_steps)
-    """
     n = len(dimensions) - 1  # Number of matrices
     if n < 2:
         return 0, [[0]], ["Error: Need at least 2 matrices"]
@@ -63,17 +53,7 @@ def format_matrix_dimensions(dimensions: List[int]) -> str:
     return ", ".join(result)
 
 def print_optimal_parentheses(s: List[List[int]], i: int, j: int) -> str:
-    """
-    Reconstruct the optimal parenthesization.
     
-    Args:
-        s: Split point table
-        i: Start matrix index
-        j: End matrix index
-    
-    Returns:
-        String representation of optimal parenthesization
-    """
     if i == j:
         return f"M{i+1}"
     else:
@@ -83,17 +63,7 @@ def print_optimal_parentheses(s: List[List[int]], i: int, j: int) -> str:
         return f"({left} × {right})"
 
 def get_computation_order(s: List[List[int]], i: int, j: int, dimensions: List[int], steps: List[str], level: int = 0) -> None:
-    """
-    Get the order of matrix multiplications with costs.
-    
-    Args:
-        s: Split point table
-        i: Start matrix index  
-        j: End matrix index
-        dimensions: Matrix dimensions
-        steps: List to store computation steps
-        level: Indentation level for display
-    """
+
     if i == j:
         return
     
@@ -123,12 +93,6 @@ def get_computation_order(s: List[List[int]], i: int, j: int, dimensions: List[i
     get_computation_order(s, k+1, j, dimensions, steps, level + 1)
 
 def matrix_chain_wrapper(dimensions: List[int]) -> Tuple[int, str, List[str], List[str]]:
-    """
-    Wrapper function for matrix chain multiplication with detailed output.
-    
-    Returns:
-        Tuple of (optimal_cost, optimal_parentheses, dp_steps, computation_order)
-    """
     if len(dimensions) < 3:
         return 0, "", ["Error: Need at least 2 matrices"], []
     
