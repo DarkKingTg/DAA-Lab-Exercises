@@ -57,12 +57,25 @@ Design and Analysis of Algorithms (DAA) laboratory exercises with interactive GU
   - Computation order breakdown with costs
   - Multiple example datasets (small, medium, large, textbook)
 
+### Exercise 7: N-Queens Problem
+- **Algorithm**: Backtracking Algorithm
+- **Files**: `pro7 -Ex.7/`
+- **Features**: 
+  - Backtracking solution for N-Queens problem
+  - Visual board representation with queen symbols
+  - Chess pattern board visualization
+  - Navigation between multiple solutions
+  - Quick preset buttons (4-Queens, 8-Queens, 10-Queens)
+  - Algorithm execution trace with step-by-step details
+  - Support for board sizes 1 to 13
+  - Safety checking and conflict detection
+
 ## How to Run
 
 Each exercise can be run independently:
 
 ```bash
-# For GUI applications (Exercises 1-6)
+# For GUI applications (Exercises 1-7)
 cd "proX -Ex.X"
 python app.py
 
@@ -81,6 +94,7 @@ python main.py
 
 - Python 3.7+
 - tkinter (usually included with Python)
+- Pillow (PIL) for Exercise 7 image generation: `pip install Pillow`
 - For Exercise 1 web interface:
   - FastAPI
   - uvicorn
@@ -93,6 +107,7 @@ python main.py
 - **Step-by-step Visualization**: See how algorithms progress through their execution
 - **Performance Analysis**: Compare different algorithms and their efficiency
 - **Educational Focus**: Clear explanations and visual feedback for learning
+- **Visual Solutions**: Exercise 7 includes board visualization with queen symbols
 
 ## Exercise Details
 
@@ -104,6 +119,7 @@ python main.py
 - **Exercise 4**: Edge format: `node1-node2-weight, ...` with start node
 - **Exercise 5**: Comma-separated numbers for array
 - **Exercise 6**: Matrix dimensions: `d0, d1, d2, ..., dn` (represents n matrices)
+- **Exercise 7**: Integer board size (1-13)
 
 ### Algorithm Implementations
 
@@ -113,13 +129,16 @@ All algorithms are implemented with:
 - Educational step-by-step breakdowns
 - Comparison with alternative approaches where applicable
 
-### Dynamic Programming Features (Exercise 6)
+### Backtracking Features (Exercise 7)
 
-- **DP Table Construction**: Visual representation of the dynamic programming table
-- **Optimal Substructure**: Clear demonstration of how subproblems combine
-- **Parenthesization**: Shows the optimal way to parenthesize matrix multiplications
-- **Cost Analysis**: Detailed breakdown of scalar multiplication costs
-- **Time Complexity**: O(n³) implementation with detailed step tracking
+- **Solution Finding**: Discovers all valid N-Queens placements
+- **Conflict Detection**: Checks horizontal, vertical, and diagonal conflicts
+- **Visual Representation**: Chess board with queen symbols
+- **Solution Navigation**: Browse through multiple solutions
+- **Performance Notes**: 
+  - 4-Queens: 2 solutions
+  - 8-Queens: 92 solutions
+  - 10-Queens: 724 solutions
 
 ## Contributing
 
