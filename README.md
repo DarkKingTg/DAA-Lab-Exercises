@@ -46,12 +46,23 @@ Design and Analysis of Algorithms (DAA) laboratory exercises with interactive GU
   - Comparison with naive approach
   - Efficiency analysis and comparison counts
 
+### Exercise 6: Matrix Chain Multiplication
+- **Algorithm**: Optimal Cost Computation using Dynamic Programming
+- **Files**: `pro6 -Ex.6/`
+- **Features**: 
+  - Dynamic programming solution for matrix chain multiplication
+  - DP table visualization in separate window
+  - Step-by-step algorithm execution
+  - Optimal parenthesization display
+  - Computation order breakdown with costs
+  - Multiple example datasets (small, medium, large, textbook)
+
 ## How to Run
 
 Each exercise can be run independently:
 
 ```bash
-# For GUI applications (Exercises 1-5)
+# For GUI applications (Exercises 1-6)
 cd "proX -Ex.X"
 python app.py
 
@@ -92,6 +103,7 @@ python main.py
 - **Exercise 3**: Edge format: `node1-node2-weight, ...` (comma-separated)
 - **Exercise 4**: Edge format: `node1-node2-weight, ...` with start node
 - **Exercise 5**: Comma-separated numbers for array
+- **Exercise 6**: Matrix dimensions: `d0, d1, d2, ..., dn` (represents n matrices)
 
 ### Algorithm Implementations
 
@@ -100,6 +112,14 @@ All algorithms are implemented with:
 - Clear code structure and comments
 - Educational step-by-step breakdowns
 - Comparison with alternative approaches where applicable
+
+### Dynamic Programming Features (Exercise 6)
+
+- **DP Table Construction**: Visual representation of the dynamic programming table
+- **Optimal Substructure**: Clear demonstration of how subproblems combine
+- **Parenthesization**: Shows the optimal way to parenthesize matrix multiplications
+- **Cost Analysis**: Detailed breakdown of scalar multiplication costs
+- **Time Complexity**: O(n³) implementation with detailed step tracking
 
 ## Contributing
 
