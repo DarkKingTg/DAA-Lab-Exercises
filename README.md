@@ -70,12 +70,40 @@ Design and Analysis of Algorithms (DAA) laboratory exercises with interactive GU
   - Support for board sizes 1 to 13
   - Safety checking and conflict detection
 
+### Exercise 8: Travelling Salesman Problem
+- **Algorithm**: Branch and Bound Algorithm using Reduced Cost Matrix
+- **Files**: `pro8 -Ex.8/`
+- **Features**: 
+  - Optimal tour path finding for TSP using Least Cost Branch and Bound (LCBB)
+  - Reduced cost matrix lower bound calculation and state space tree exploration
+  - Circular graph visualization with directional tour arrows, sequence tags, and edge weights
+  - Preset graphs (4-city, 5-city symmetric, 5-city asymmetric, 6-city)
+  - Detailed step-by-step execution log of node generation and pruning
+
+### Exercise 9: Effective Bin Packing
+- **Algorithm**: Bin Packing Heuristics (FFD, BFD, FF, BF, NF, WF)
+- **Files**: `pro9 -Ex.9/`
+- **Features**: 
+  - 6 Bin Packing heuristics implemented and compared (First-Fit Decreasing, Best-Fit Decreasing, First-Fit, Best-Fit, Next-Fit, Worst-Fit)
+  - Visual bin container visualization showing color-coded stacked item blocks and remaining space
+  - Side-by-side comparative table ranking algorithms by bins used, wasted capacity, and packing efficiency (%)
+  - Preset datasets (Textbook Classic, Heavy Cargo, Small Mixed Items, Disparate Sizes)
+
+### Exercise 10: Improving Quicksort using Randomized Algorithm
+- **Algorithm**: Randomized Quicksort vs. Deterministic Quicksort
+- **Files**: `pro10 -Ex.10/`
+- **Features**: 
+  - Eliminates O(n²) worst-case recursion depth on sorted/structured input using random pivot and median-of-3 randomized selection
+  - Array bar chart visualization before and after sorting
+  - Comprehensive metrics tracking: Comparisons count, Swaps count, Max recursion depth, Execution time (ms)
+  - Side-by-side comparative benchmark table across 4 array distributions (Random, Already Sorted, Reverse Sorted, Duplicates)
+
 ## How to Run
 
 Each exercise can be run independently:
 
 ```bash
-# For GUI applications (Exercises 1-7)
+# For GUI applications (Exercises 1-10)
 cd "proX -Ex.X"
 python app.py
 
