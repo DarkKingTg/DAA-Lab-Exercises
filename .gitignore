@@ -22,3 +22,10 @@ Thumbs.db
 .dropstone/
 *.db
 metrics.json
+
+#UnwantedFolder
+PrintoutImages/*
+
+#Pythin FIles
+
+test.py
