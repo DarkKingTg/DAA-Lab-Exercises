@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+.dropstone/
+*.db
+metrics.json
+
+#UnwantedFolder
+PrintoutImages/*
+
+#Pythin FIles
+
+test.py
